@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tic-Tac-Toe BD &#8212; &#2463;&#2495;&#2453;-&#2463;&#2509;&#2479;&#2494;&#2453;-&#2463;&#2507;</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="top">
+  <h1>&#11093;&#10060; Tic-Tac-Toe BD</h1>
+  <p class="tagline" data-i18n="tagline">Classic 3&#215;3 &#8212; beat the computer or play a friend</p>
+  <button id="langBtn" type="button">&#2476;&#2494;&#2434;&#2482;&#2494;</button>
+</header>
+
+<main>
+  <section class="panel controls" aria-label="Game settings">
+    <label><span data-i18n="mode">Mode</span>
+      <select id="modeSel">
+        <option value="ai" data-i18n="vsAI">You vs Computer</option>
+        <option value="2p" data-i18n="twoPlayer">2 Players (local)</option>
+      </select>
+    </label>
+    <label id="difficultyRow"><span data-i18n="difficulty">Difficulty</span>
+      <select id="diffSel">
+        <option value="easy" data-i18n="easy">Easy</option>
+        <option value="medium" data-i18n="medium" selected>Medium</option>
+        <option value="hard" data-i18n="hard">Hard (unbeatable)</option>
+      </select>
+    </label>
+    <label id="youPlayRow"><span data-i18n="youPlay">You play</span>
+      <select id="markSel">
+        <option value="X" data-i18n="xLabel">X (first)</option>
+        <option value="O" data-i18n="oLabel">O (second)</option>
+      </select>
+    </label>
+  </section>
+
+  <section class="game">
+    <p id="status" role="status" aria-live="polite"></p>
+    <div id="board" class="board" aria-label="Tic-tac-toe board"></div>
+    <p id="note" class="note" role="status"></p>
+    <div class="actions">
+      <button id="newBtn" type="button" data-i18n="newGame">New game</button>
+      <button id="undoBtn" type="button" data-i18n="undo">Undo</button>
+      <button id="resetBtn" type="button" data-i18n="resetScores">Reset scores</button>
+    </div>
+  </section>
+
+  <section class="panel scores" aria-label="Scores">
+    <h2 data-i18n="scoreTitle">Score</h2>
+    <dl>
+      <div id="scoreAiRow"><dt data-i18n="you">You</dt><dd id="scoreYou">0</dd></div>
+      <div id="scoreAiRow2"><dt data-i18n="computer">Computer</dt><dd id="scoreAi">0</dd></div>
+      <div id="scoreXRow"><dt data-i18n="playerX">Player X</dt><dd id="scoreX">0</dd></div>
+      <div id="scoreORow"><dt data-i18n="playerO">Player O</dt><dd id="scoreO">0</dd></div>
+      <div><dt data-i18n="draws">Draws</dt><dd id="scoreDraws">0</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel how">
+    <h2 data-i18n="howTitle">How to play</h2>
+    <p data-i18n="howText">Get 3 in a row &#8212; across, down, or diagonal. Hard mode plays perfectly: the best you can do is draw.</p>
+  </section>
+</main>
+
+<footer data-i18n="footer">Offline toy. No account, no network. Scores stay on this device only.</footer>
+
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

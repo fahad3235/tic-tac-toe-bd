@@ -1,0 +1,57 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f4f6f8; color: #1c2430; line-height: 1.5;
+}
+.top {
+  background: #123c69; color: #fff; padding: 1rem; text-align: center;
+  position: relative;
+}
+.top h1 { margin: 0; font-size: 1.6rem; }
+.tagline { margin: 0.25rem 0 0; opacity: 0.9; }
+#langBtn {
+  position: absolute; top: 1rem; right: 1rem;
+  background: #fff; color: #123c69; border: 0; border-radius: 999px;
+  padding: 0.35rem 0.9rem; font-weight: 700; cursor: pointer;
+}
+main { max-width: 520px; margin: 0 auto; padding: 1rem; }
+.panel {
+  background: #fff; border-radius: 12px; padding: 1rem;
+  margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.controls { display: grid; gap: 0.75rem; }
+.controls label { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+select, button { font: inherit; }
+select { padding: 0.4rem 0.5rem; border-radius: 8px; border: 1px solid #c3ccd6; background: #fff; }
+.game { text-align: center; margin-bottom: 1rem; }
+#status { font-size: 1.25rem; font-weight: 700; min-height: 1.9rem; margin: 0.5rem 0; }
+.board {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  max-width: 360px; margin: 0 auto;
+}
+.cell {
+  aspect-ratio: 1; font-size: 2.75rem; font-weight: 800;
+  background: #fff; border: 2px solid #c3ccd6; border-radius: 12px; cursor: pointer;
+}
+.cell:disabled { cursor: default; opacity: 1; }
+.cell.mark-x { color: #123c69; }
+.cell.mark-o { color: #c0392b; }
+.cell.win { background: #ffe9a8; border-color: #e0a800; }
+.note { color: #c0392b; min-height: 1.5rem; margin: 0.5rem 0; }
+.actions { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+.actions button {
+  background: #123c69; color: #fff; border: 0; border-radius: 999px;
+  padding: 0.55rem 1.1rem; cursor: pointer; font-weight: 600;
+}
+.actions button:disabled { opacity: 0.45; cursor: default; }
+.scores h2, .how h2 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.scores dl { margin: 0; display: grid; gap: 0.35rem; }
+.scores dl div { display: flex; justify-content: space-between; }
+.scores dd { margin: 0; font-weight: 700; }
+footer { text-align: center; color: #66707c; font-size: 0.85rem; padding: 0 1rem 1.5rem; }
+@media (max-width: 390px) {
+  .top h1 { font-size: 1.3rem; }
+  #langBtn { position: static; margin-top: 0.5rem; }
+  .cell { font-size: 2.25rem; }
+  .controls label { flex-direction: column; align-items: stretch; }
+}
